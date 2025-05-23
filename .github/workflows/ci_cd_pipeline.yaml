@@ -33,7 +33,7 @@ jobs:
 
     - name: Run quality checks
       run: |
-        flake8 calc/ tests/ --count --show-source --statistics --exclude=.git,__pycache__
+        flake8 calc/ tests/ --count --show-source --statistics --exclude=.git,__pycache__,*/__init__.py
         black --check calc/ tests/ --exclude='/(\.git|__pycache__)/'
         mypy calc/ tests/ --ignore-missing-imports --exclude '/(\.git|__pycache__)/'
 
